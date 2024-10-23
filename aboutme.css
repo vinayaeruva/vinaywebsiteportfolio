@@ -1,0 +1,226 @@
+/* Global Styles */
+* {
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('backgroundvin.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+}
+
+/* Header styling */
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+}
+
+/* Logo container */
+.logo-container {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+/* Logo image styling */
+.logo {
+    height: 150px; /* Adjust the height as needed */
+    width: auto;
+    cursor: pointer;
+}
+/* Responsive Styles for Mobile */
+@media (max-width: 600px) {
+    .logo {
+        height: 70px; /* Smaller height for mobile */
+        /* You can also set width to auto if needed, or specify a fixed width */
+    }
+}
+
+/* About Section */
+.about-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+    max-width: 800px;
+    margin: 50px auto;
+    background-image: url('background.png');
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    animation: fadeIn 2s ease-in forwards;
+    background-size: cover;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+/* Profile Photo Styles */
+.profile-photo img {
+    width: 330px;
+    height: 340px;
+    border-radius: 50%;
+    border: 3px solid #ddd;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-left: 350px;
+    animation: bounce 1.5s ease-in-out infinite;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+
+}
+/* Responsive Styles for Mobile */
+@media (max-width: 600px) {
+    .profile-photo img {
+        width: 150px; /* Smaller width for mobile */
+        height: 150px; /* Smaller height for mobile */
+        margin-left: 150px;
+    }
+}
+
+/* Text Styles */
+.about-text h1 {
+    font-size: 28px;
+    color: white;
+    margin-bottom: 10px;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1.5s ease-in-out forwards;
+}
+
+.about-text p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: white;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideIn 1.5s ease-in-out forwards;
+    animation-delay: 0.3s;
+}
+
+@keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-50px); }
+    100% { opacity: 1; transform: translateX(0); }
+}
+
+/* Timeline Section */
+.timeline {
+    position: relative;
+    width: 90%;
+    margin: 50px auto;
+    padding: 20px 0;
+}
+
+.timeline-item {
+    display: flex;
+    justify-content: flex-end;
+    padding: 10px 0;
+    position: relative;
+}
+
+.timeline-item.left {
+    justify-content: flex-start;
+}
+
+.timeline-item .content {
+    background-color: #a9a9a9;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    width: 35%;
+}
+
+.timeline-item.right .content {
+    margin-left: 50px;
+}
+
+.timeline-item.left .content {
+    margin-right: 50px;
+}
+
+.timeline-item h2 {
+    color: #333;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.timeline-item p {
+    color: #666;
+    font-size: 16px;
+}
+
+.timeline-item::before {
+    content: "";
+    position: absolute;
+    width: 6px;
+    height: 100%;
+    background-color: #333;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.timeline-item::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: #333;
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    .about-container {
+        padding: 10px;
+        margin: 20px auto; /* Reduce margin for smaller screens */
+    }
+
+    .about-text h1 {
+        font-size: 24px;
+    }
+
+    .about-text p {
+        font-size: 16px;
+        margin: 0 10px; /* Adjust margins for smaller screens */
+    }
+
+    .timeline-item .content {
+        width: 80%; /* Increase width on smaller screens */
+    }
+
+    .timeline-item {
+        margin-left: 0; /* Remove margin for better alignment */
+        margin-right: 0; /* Remove margin for better alignment */
+    }
+}
+
+/* Links */
+a {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #f39c12;
+}
