@@ -161,7 +161,7 @@ nav {
 
     /* Move the hero section and headings below the navigation */
     .hero {
-        margin-top: 220px; /* Add margin to separate from nav */
+        margin-top: 270px; /* Add margin to separate from nav */
         height: 40vh; /* Reduce the height for smaller screens */
         padding: 15px; /* Adjust padding for smaller screens */
     }
@@ -197,6 +197,15 @@ nav {
     height: 80vh;
     position: relative;
     text-align: center;
+    margin-top: 80px;
+}
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .hero {
+        height: 60vh;         /* Reduce height to fit smaller screens */
+        padding: 20px;        /* Add padding for breathing room on mobile */
+        margin-top: 320px;     /* Adjust margin to optimize vertical space */
+    }
 }
 
 /* Styling for the name and headings */
@@ -287,8 +296,9 @@ nav {
     display: flex; /* Use flexbox for layout */
     overflow: hidden; /* Hide overflow to prevent scrollbar */
     white-space: nowrap; /* Prevent line breaks */
-    animation: slide 120s linear infinite; /* Slow animation */
+    animation: slide 110s linear infinite; /* Slow animation */
     position: relative; /* Positioning for absolute children */
+    margin-top: 80px;
 
 }
 
@@ -345,7 +355,7 @@ nav {
 
     .skills img {
         width: 25px; /* Further reduce image size on mobiles */
-        margin: 0 8px; /* Adjust spacing for small screens */
+        margin-top: 220px; /* Adjust spacing for small screens */
     }
 }
 
@@ -457,7 +467,7 @@ nav {
 }
 /* Hide entire section on mobile */
 @media (max-width: 768px) {
-    .vertical-separator{
+    .vertical-separator,.separator{
         display: none; /* Hide the specified elements on mobile screens */
     }
 }
@@ -480,14 +490,26 @@ nav {
     cursor: pointer; /* Change cursor to pointer to indicate interactivity */
 }
 /* Responsive adjustments */
+/* Tablet Styles */
 @media (max-width: 768px) {
     .description {
-        font-size: 16px; /* Slightly reduce font size for smaller screens */
-        line-height: 1.5; /* Adjust line height for better readability */
-        margin: 0 10px; /* Reduce horizontal spacing */
-        margin-top: 20px;
+        font-size: 16px;      /* Slightly reduce font size for smaller screens */
+        line-height: 1.5;     /* Adjust line height for better readability */
+        margin: 0 10px;       /* Reduce horizontal spacing */
+        margin-top: 20px;     /* Add top margin */
     }
 }
+
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .description {
+        font-size: 14px;      /* Further reduce font size for mobile screens */
+        line-height: 1.4;     /* Slightly tighter line height for smaller screens */
+        margin: 0 8px;        /* Reduce horizontal spacing further */
+        margin-top: 15px;     /* Adjust top margin */
+    }
+}
+
 
 
 
@@ -531,6 +553,8 @@ nav {
     background-color: #ffffff; /* Color of the separator */
     margin: 20px auto; /* Center the separator and add vertical spacing */
     opacity: 0.5; /* Optional: adjust opacity for a subtle effect */
+
+
 }
 
 /* Mobile styles */
@@ -592,60 +616,83 @@ nav {
 /* Footer Styling */
 #transparent-footer {
     position: fixed;
-    bottom: 0; /* Position at the bottom */
+    bottom: 0;
     left: 0;
     right: 0;
-    background-color: rgba(255, 255, 255, 0.1); /* Very transparent white background */
+    width: 100%; /* Ensure full width on all screens */
+    background-color: rgba(255, 255, 255, 0.1);
     color: white;
     text-align: center;
     padding: 10px 0;
-    opacity: 0; /* Initially invisible */
-    transition: opacity 0.5s ease, bottom 0.5s ease; /* Smooth transition */
-    display: flex; /* Use flexbox for layout */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
+    opacity: 0;
+    transition: opacity 0.5s ease, bottom 0.5s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* Footer content styles */
 .footer-content {
-    display: flex; /* Use flexbox to arrange items side by side */
-    gap: 60px; /* Space between email and phone number */
+    display: flex;
+    width: 100%; /* Ensure full width on mobile */
+    justify-content: center; /* Center content horizontally */
+    gap: 60px;
+    margin: 0; /* Remove any margin that might cause alignment issues */
 }
 
 #transparent-footer p {
     margin: 0;
-    transition: color 0.3s ease; /* Smooth transition for color change */
+    transition: color 0.3s ease;
 }
 
 /* Hover effect for text */
 #transparent-footer p:hover {
-    color: #ffcc00; /* Change text color on hover */
-    cursor: pointer; /* Change cursor to pointer to indicate interactivity */
+    color: #ffcc00;
+    cursor: pointer;
 }
 
 /* When footer is visible, make it opaque */
 #transparent-footer.visible {
-    opacity: 1; /* Make it fully visible */
+    opacity: 1;
 }
 
 /* Additional spacing for content area */
 .content {
-    padding-bottom: 60px; /* Increase padding to avoid overlap with footer */
+    padding-bottom: 60px;
 }
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .footer-content {
-        flex-direction: column; /* Stack items vertically on small screens */
-        align-items: center; /* Center items */
-        gap: 20px; /* Reduced gap for smaller screens */
 
+/* Mobile Styles */
+@media (max-width: 480px) {
+    #transparent-footer {
+        padding: 15px 0;
+        font-size: 14px;
     }
+
+    .footer-content {
+        flex-direction: column;
+        align-items: center; /* Align items to the left */
+        gap: 20px;
+        width: 90%; /* Set width to a percentage that fits smaller screens */
+        max-width: 500px; /* Optional: max width to prevent it from being too wide */
+        margin: 0 auto; /* Center the container within its parent */
+        padding-left: 10px; /* Optional: slight padding for spacing */
+    }
+
 
     #transparent-footer p {
-        font-size: 16px; /* Slightly smaller font size for better readability */
+        font-size: 14px;
+    }
 
+    .content {
+        padding-bottom: 80px;
     }
 }
+
+
+
+
+
+
 
 
 
@@ -654,7 +701,7 @@ nav {
 .parent-container {
     display: flex;
     justify-content: center; /* Centers the child horizontally */
-    margin-top: 230px;
+    margin-top: 200px;
 }
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -664,6 +711,17 @@ nav {
         padding: 20px; /* Optional: Add padding for better spacing */
     }
 }
+/* Mobile Styles */
+@media (max-width: 480px) {
+    .parent-container {
+        flex-direction: column; /* Stack items vertically on mobile screens */
+        align-items: center;    /* Center items */
+        padding: 15px;          /* Reduce padding for smaller screens */
+        width: 100%;            /* Set width to full viewport width */
+        margin-top: 20px;
+    }
+}
+
 
 .my-projects-title {
     font-size: 2em;
@@ -797,7 +855,34 @@ nav {
 
     .card img {
         width: 100%; /* Make images responsive within the card */
-        height: auto; /* Let image height adjust based on width */
+        height: 40%; /* Let image height adjust based on width */
         margin: 10px auto; /* Center the image horizontally */
+    }
+}
+
+.video-container {
+    width: 100%;        /* Make the container full width */
+    max-width: 2000px; /* Set a maximum width (optional) */
+    padding: 0;        /* Remove padding to ensure the video occupies the full width */
+    margin-top: 10px;  /* Add margin at the top */
+}
+
+.video-container video {
+    width: 100vw;      /* Set video width to full viewport width */
+    height: 300px;     /* Set a fixed height for the video */
+    object-fit: cover; /* Ensure the video covers the container without distortion */
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .video-container video {
+        height: 200px; /* Reduce the height for mobile devices */
+    }
+}
+
+@media (max-width: 480px) {
+    .video-container video {
+        height: 150px; /* Further reduce the height for very small screens */
+
     }
 }
